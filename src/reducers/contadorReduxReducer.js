@@ -11,9 +11,16 @@ export const contadorReduxReducer = (state = initialState, action) => {
   case INCREMENT:
     return { ...state, contador:state.contador + 1 };
   case DECREMENT5:
-    return {...state, contador:state.contador - action.payload };
-  case DECREMENT:
-    return {...state, contador:state.contador - 1 };
+    if(state.contador>4){
+      return {...state, contador:state.contador - action.payload };
+    }
+    return state;
+
+    case DECREMENT:
+      if(state.contador>0){
+        return {...state, contador:state.contador - 1 };
+      }
+      return state;
   case RESET:
     return { ...state, contador:0 };
   case FETCH:

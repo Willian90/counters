@@ -40,3 +40,9 @@ button {
 li{
   font-size: 1em;
 }
+
+input{
+  width: 10rem;
+  height: 2rem;
+  font-size: 1.2rems;
+}

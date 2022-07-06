@@ -23,9 +23,9 @@ const Contador=()=> {
         <nav>
             <button onClick={()=>dispatch(sumar5())}>+5</button>
             <button onClick={()=>dispatch(sumar())}>+</button>
-            <button onClick={()=>dispatch(reset())}>0</button>
-            <button onClick={()=>dispatch(restar())}>-</button>
-            <button onClick={()=>dispatch(restar5())}>-5</button>
+            <button onClick={()=>dispatch(reset())} disabled={(state.contador===0)?true:false}>0</button>
+            <button onClick={()=>dispatch(restar())} disabled={(state.contador===0)?true:false}>-</button>
+            <button onClick={()=>dispatch(restar5())} disabled={(state.contador<=4)?true:false}>-5</button>
       </nav>
         <h2>{state.contador} </h2>
     </div>

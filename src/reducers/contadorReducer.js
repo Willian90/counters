@@ -9,11 +9,18 @@ export const reducer=(state, action)=>{
             case Types.INCREMENT:
                 return {contador:state.contador + 1};
             case Types.DECREMENT:
-                return {contador: state.contador-1}
-            case Types.INCREMENT5:
-                return {contador:state.contador + action.payload};
+                if(state.contador>0){
+                    return {contador: state.contador-1}
+                }
+                return state;
             case Types.DECREMENT5:
-                return {contador: state.contador-action.payload}
+                if(state.contador>=5){
+                    return {contador:state.contador - action.payload}
+                }
+                return state;
+                
+            case Types.INCREMENT5:
+                return {contador: state.contador+action.payload}
             case Types.RESET:
                 return {contador: 0}
             default:

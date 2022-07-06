@@ -17,9 +17,9 @@ const reset=()=>dispatch({type:"RESET"});
         <nav>
             <button onClick={sumar5}>+5</button>
             <button onClick={sumar}>+</button>
-            <button onClick={reset}>0</button>
-            <button onClick={restar}>-</button>
-            <button onClick={restar5}>-5</button>
+            <button onClick={reset} disabled={(state.contador===0)?true:false}>0</button>
+            <button onClick={restar} disabled={(state.contador===0)?true:false}>-</button>
+            <button onClick={restar5} disabled={(state.contador<=4)?true:false}>-5</button>
         </nav>
         <h2>{state.contador}</h2>
     </div>
